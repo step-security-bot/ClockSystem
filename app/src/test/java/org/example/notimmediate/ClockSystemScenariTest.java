@@ -5,7 +5,9 @@ import org.example.component.ClockSystem;
 import org.example.state.alarm.TriggeredAlarm;
 import org.example.state.clocktimer.DisplayClockTimerOff;
 import org.example.state.clocktimer.DisplayClockTimerOn;
+import org.example.state.stopwatch.DisplayStopWatchOff;
 import org.example.state.stopwatch.DisplayStopWatchOn;
+import org.example.state.time.DisplayNormalTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,11 +31,14 @@ public class ClockSystemScenariTest {
 	
 	@Test
 	public void scenarioOneTest() throws InterruptedException {
-		
+
+		assertSame(DisplayNormalTime.Instance(),cs.getState());
+
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		
+		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+
 		cs.getClockTimer().getTime().setSecond(2);
 		cs.button3Pressed();
 		
@@ -42,7 +47,9 @@ public class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In DisplayTime
-		
+		assertSame(DisplayNormalTime.Instance(), cs.getState());
+
+		// wait for more than 2 seconds to ensure timeout happens
 		Thread.sleep(2100);
 		
 		cs.button1Pressed();
@@ -57,11 +64,14 @@ public class ClockSystemScenariTest {
 	
 	@Test
 	public void scenarioTwoTest() throws InterruptedException {
-		
+
+		assertSame(DisplayNormalTime.Instance(),cs.getState());
+
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		
+		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+
 		cs.getClockTimer().getTime().setSecond(2);
 		cs.button3Pressed();
 		
@@ -70,12 +80,14 @@ public class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In DisplayTime
-		
+		assertSame(DisplayNormalTime.Instance(), cs.getState());
+
+		// wait for LESS than 2 seconds
 		Thread.sleep(1000);
 		
 		cs.button1Pressed();
 		
-		assertSame(DisplayClockTimerOn.Instance(), cs.getState());
+		assertSame(DisplayClockTimerOn.Instance(), cs.getState(), "this is a flaky test location");
 		}
 	
 	/* The next test controls if this scenario(3) is correct :
@@ -86,12 +98,15 @@ public class ClockSystemScenariTest {
 	
 	@Test 
 	public void scenarioThreeTest() throws InterruptedException {
-		
+
+		assertSame(DisplayNormalTime.Instance(),cs.getState());
+
 		cs.button1Pressed();
 		cs.button1Pressed();
-		
+
 		// In StopWatchState
-		
+		assertSame(DisplayStopWatchOff.Instance(), cs.getState());
+
 		cs.button3Pressed();
 		
 		cs.button1Pressed();
@@ -99,7 +114,9 @@ public class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		
+		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+
+		// wait for 1 sec
 		Thread.sleep(1000);
 		
 		cs.button1Pressed();
@@ -116,11 +133,14 @@ public class ClockSystemScenariTest {
 	
 	@Test 
 	public void scenarioFourTest() throws InterruptedException {
-		
+
+		assertSame(DisplayNormalTime.Instance(),cs.getState());
+
 		cs.getAlarm(0).getTime().setSecond(2);
 		cs.getAlarm(0).setPowerState(true);
-		
-		Thread.sleep(2100);
+
+		// wait for at least 2 seconds
+		Thread.sleep(2500);
 
 		assertSame(TriggeredAlarm.Instance(), cs.getState());
 		
@@ -137,15 +157,19 @@ public class ClockSystemScenariTest {
 	
 	@Test 
 	public void scenarioFiveTest() throws InterruptedException {
-		
+
+		assertSame(DisplayNormalTime.Instance(),cs.getState());
+
 		cs.getAlarm(0).getTime().setSecond(2);
 		cs.getAlarm(0).setPowerState(true);
 		
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		
-		Thread.sleep(2100);
+		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+
+		// wait for at least 2 seconds
+		Thread.sleep(2500);
 
 		// Alarm is triggering
 		
@@ -169,26 +193,31 @@ public class ClockSystemScenariTest {
 	
 	@Test 
 	public void scenarioSixTest() throws InterruptedException {
-		
+
+		assertSame(DisplayNormalTime.Instance(),cs.getState());
+
 		cs.getAlarm(0).getTime().setSecond(1);
 		cs.getAlarm(0).setPowerState(true);
 		
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		
+		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+
 		cs.getClockTimer().getTime().setSecond(2);
 		cs.button3Pressed();
 		
 		assertSame(DisplayClockTimerOn.Instance(), cs.getState());
-		
-		Thread.sleep(2200);
+
+		// wait for at least 2 seconds
+		Thread.sleep(2500);
 
 		// Alarm is triggering
-		
+		assertSame(TriggeredAlarm.Instance(), cs.getState());
+
 		cs.button1Pressed();
 		
-		assertSame(DisplayClockTimerOff.Instance(),cs.getState());
+		assertSame(DisplayClockTimerOff.Instance(),cs.getState(),"this is a flaky test location");
 		}
 	
 	/* The next test controls if this scenario(7) is correct :
@@ -204,7 +233,9 @@ public class ClockSystemScenariTest {
 	
 	@Test 
 	public void scenarioSevenTest() throws InterruptedException {
-		
+
+		assertSame(DisplayNormalTime.Instance(),cs.getState());
+
 		// first alarm:
 		cs.getAlarm(0).getTime().setSecond(1);
 		cs.getAlarm(0).setPowerState(true);
@@ -215,11 +246,14 @@ public class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		
-		Thread.sleep(2100);
+		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+
+		// wait for at least 2 seconds to trigger alarm
+		Thread.sleep(2500);
 
 		// Alarm is triggering
-		
+		assertSame(TriggeredAlarm.Instance(), cs.getState());
+
 		cs.button1Pressed();
 		
 		assertSame(DisplayClockTimerOff.Instance(), cs.getState()); }
@@ -235,15 +269,17 @@ public class ClockSystemScenariTest {
 	
 	@Test 
 	public void scenarioEigthTest() throws InterruptedException {
-		
+
+		assertSame(DisplayNormalTime.Instance(),cs.getState());
+
 		cs.getAlarm(0).getTime().setHour(1);
 		cs.getAlarm(0).setPowerState(true);
 
-		
 		cs.getTime().setMinute(59);
 		cs.getTime().setSecond(59);
-		
-		Thread.sleep(1100);
+
+		// wait for at least 1 second
+		Thread.sleep(1500);
 
 		// Alarm is triggering
 		assertSame(TriggeredAlarm.Instance(), cs.getState());

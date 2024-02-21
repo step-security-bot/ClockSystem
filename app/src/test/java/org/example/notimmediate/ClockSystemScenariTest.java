@@ -55,7 +55,7 @@ public class ClockSystemScenariTest {
 	 * 		- Switch in another state and waiting for LESS than 2sec
 	 * 		- Switch in ClockTimer and being in DisplayClockTimerOn */
 	
-	@Test 
+	@Test
 	public void scenarioTwoTest() throws InterruptedException {
 		
 		cs.button1Pressed();

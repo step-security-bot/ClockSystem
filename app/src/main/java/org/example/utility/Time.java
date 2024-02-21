@@ -111,34 +111,22 @@ public class Time {
 			return false; } }
 	
 	public String hourToString() {
-		String hourString = (new Integer(hour)).toString();
-		if (hour<10) {
-			hourString = "0"+hourString; }
-		return hourString; }
+		String s = String.valueOf(hour);
+		if (hour<10) s = "0"+s;
+		return s; }
 	
 	public String minuteToString() {
-		String minuteString = (new Integer(minute)).toString();
-		if (minute<10) {
-			minuteString = "0"+minuteString; }
-		return minuteString; }
+		String s = String.valueOf(minute);
+		if (minute<10) s = "0"+s;
+		return s; }
 	
 	public String secondToString() {
-		String secondString = (new Integer(second)).toString();
-		if (second<10) {
-			secondString = "0"+secondString; }
-		return secondString; }
+		String s = String.valueOf(second);
+		if (second<10) s = "0"+s;
+		return s; }
 	
 	public String toString() {
-		String hourString = (new Integer(hour)).toString();
-		String minuteString = (new Integer(minute)).toString();
-		String secondString = (new Integer(second)).toString();		
-		if (hour<10) {
-			hourString = "0"+hour; }
-		if (minute<10) {
-			minuteString = "0"+minute; }
-		if (second<10) {
-			secondString = "0"+second; }
-		return hourString+":"+minuteString+":"+secondString; }
+		return hourToString()+":"+minuteToString()+":"+secondToString(); }
 		
 	public boolean isZero() {
 		return (hour==0 & minute==0 & second==0); }

@@ -105,6 +105,10 @@ public class Time {
 		if (v<10) s = "0"+s;
 		return s; }
 
+	@Override
+	public String toString() {
+		return toString(hour)+":"+toString(minute)+":"+toString(second); }
+
 	public boolean isZero() {
 		return (hour==0 && minute==0 && second==0); }
 	

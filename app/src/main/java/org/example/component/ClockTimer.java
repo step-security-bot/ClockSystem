@@ -4,10 +4,7 @@ import org.example.state.alarm.TriggeredAlarm;
 import org.example.state.clocktimer.DisplayClockTimerOff;
 import org.example.state.clocktimer.DisplayClockTimerOn;
 import org.example.state.compositestate.clocktimer.ClockTimerDisplayState;
-import org.example.utility.Audio;
-import org.example.utility.Time;
-import org.example.utility.TimeOwner;
-import org.example.utility.TimeTimer;
+import org.example.utility.*;
 
 public class ClockTimer implements TimeOwner {
 	
@@ -50,7 +47,7 @@ public class ClockTimer implements TimeOwner {
 
 	public void tick() {
 		time.tickDown();
-		if (time.isOne()) {
+		if (time.isZero()) {
 			time.tickDown();
 			ring();
 			stop();

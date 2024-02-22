@@ -21,7 +21,12 @@ public class TimeDisplayerPanel extends JPanel {
 	private JLabel labelMinute;
 	private JLabel labelSecond;
 	private JLabel labelIcon;
-	
+
+	public String toString(int v) {
+		String s = String.valueOf(v);
+		if (v<10) s = "0"+s;
+		return s; }
+
 	public TimeDisplayerPanel(ClockSystem context) throws FontFormatException, IOException {
 		
 		super();
@@ -41,17 +46,17 @@ public class TimeDisplayerPanel extends JPanel {
 		
 		this.context = context;
 		
-		labelHour = new JLabel(timeToUpdate.hourToString());
+		labelHour = new JLabel(toString(timeToUpdate.getHour()));
 		labelHour.setFont(new Font(Font.DIALOG,Font.PLAIN, 60));
 		labelHour.setFont(font_wanted);
 		labelHour.setPreferredSize(new Dimension(100,75));
 		
-		labelMinute = new JLabel(timeToUpdate.minuteToString());
+		labelMinute = new JLabel(toString(timeToUpdate.getMinute()));
 		labelMinute.setFont(new Font(Font.DIALOG,Font.PLAIN, 60));
 		labelMinute.setFont(font_wanted);
 		labelMinute.setPreferredSize(new Dimension(100,75));
 		
-		labelSecond = new JLabel(timeToUpdate.secondToString());
+		labelSecond = new JLabel(toString(timeToUpdate.getSecond()));
 		labelSecond.setFont(new Font(Font.DIALOG,Font.PLAIN, 60));
 		labelSecond.setFont(font_wanted);
 		labelSecond.setPreferredSize(new Dimension(100,75));
@@ -71,9 +76,9 @@ public class TimeDisplayerPanel extends JPanel {
 		
 		Time timeToUpdate = context.getObservedTime();
 		
-		labelHour.setText(timeToUpdate.hourToString());
-		labelMinute.setText(timeToUpdate.minuteToString());
-		labelSecond.setText(timeToUpdate.secondToString());
+		labelHour.setText(toString(timeToUpdate.getHour()));
+		labelMinute.setText(toString(timeToUpdate.getMinute()));
+		labelSecond.setText(toString(timeToUpdate.getSecond()));
 		labelIcon.setText(context.getIcon()); }
 	
 	public void setHourColor(Color color) {

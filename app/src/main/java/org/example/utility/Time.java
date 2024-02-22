@@ -35,40 +35,22 @@ public class Time {
 		second=s; }
 
 	public void increaseHour() {
-		if (hour==23) {
-			hour=0; }
-		else {
-			hour+=1;} }
+		hour = (hour + 1) % 24; }
 
 	public void increaseMinute() {
-		if (minute==59) {
-			minute=0; }
-		else {
-			minute+=1;} }
-			
+		minute = (minute + 1) % 60; }
+
 	public void increaseSecond() {
-		if (second==59) {
-			second=0; }
-		else {
-			second+=1;} }
+		second = (second + 1) % 60; }
 
 	public void decreaseHour() {
-		if (hour==0) {
-			hour=23; }
-		else {
-			hour-=1;} }
+		hour = (hour - 1) % 24; }
 
 	public void decreaseMinute() {
-		if (minute==0) {
-			minute=59; }
-		else {
-			minute-=1;} }
+		minute = (minute - 1) % 60; }
 
 	public void decreaseSecond() {
-		if (second==0) {
-			second=59; }
-		else {
-			second-=1;} }
+		second = (second - 1) % 60; }
 
 	public void tickUp() {
 		if (second==59) {
@@ -105,29 +87,13 @@ public class Time {
 			second-=1; } }
 
 	public boolean equals(Time t) {
-		if (this.second==t.getSecond() & this.minute==t.getMinute() & this.hour==t.getHour()) {
-			return true; }
-		else {
-			return false; } }
-	
-	public String hourToString() {
-		String s = String.valueOf(hour);
-		if (hour<10) s = "0"+s;
+		return (this.second==t.getSecond() & this.minute==t.getMinute() & this.hour==t.getHour()); }
+
+	public String toString(int v) {
+		String s = String.valueOf(v);
+		if (v<10) s = "0"+s;
 		return s; }
-	
-	public String minuteToString() {
-		String s = String.valueOf(minute);
-		if (minute<10) s = "0"+s;
-		return s; }
-	
-	public String secondToString() {
-		String s = String.valueOf(second);
-		if (second<10) s = "0"+s;
-		return s; }
-	
-	public String toString() {
-		return hourToString()+":"+minuteToString()+":"+secondToString(); }
-		
+
 	public boolean isZero() {
 		return (hour==0 & minute==0 & second==0); }
 	

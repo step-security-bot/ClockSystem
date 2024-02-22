@@ -33,8 +33,7 @@ public class TriggeredAlarm extends AlarmSettingState {
 	private static int memoryAlarmPointer;
 	
 	private static boolean triggering = false;
-	public static Timer timer;
-	
+
 	@Override
 	public void button1Pressed(ClockSystem context) {
 		alarmConfirmedByUser(context); }		// Take care of line info color of the graphic interface

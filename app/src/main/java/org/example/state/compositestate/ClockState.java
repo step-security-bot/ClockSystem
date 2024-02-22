@@ -1,11 +1,10 @@
 package org.example.state.compositestate;
 
-//import org.example.component.*;
 import org.example.utility.Time;
 import org.example.component.*;
 import org.example.component.ClockSystem;
 
-abstract public class ClockState {
+public abstract class ClockState {
 
 	protected String BUTTON_ONE_NAME;
 	protected String BUTTON_TWO_NAME;
@@ -32,9 +31,9 @@ abstract public class ClockState {
 		// by default, pressing a button has no effect
 		}
 	
-	abstract public Time getObservedTime(ClockSystem context);
+	public abstract Time getObservedTime(ClockSystem context);
 
-	abstract public Mode getMode();
+	public abstract Mode getMode();
 	
 	public String getIcon(ClockSystem context) { return ""; }
 	

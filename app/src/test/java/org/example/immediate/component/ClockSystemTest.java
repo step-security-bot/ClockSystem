@@ -15,16 +15,16 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ClockSystemTest {
+class ClockSystemTest {
 	
 	private ClockSystem cs;
 
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
 		cs = new ClockSystem(); }
 	
 	@Test
-	public void getModeStringTest() {
+	void getModeStringTest() {
 		assertEquals("WATCH", cs.getMode().toString());
 		cs.button1Pressed();
 		assertEquals("CLOCKTIMER", cs.getMode().toString());
@@ -36,7 +36,7 @@ public class ClockSystemTest {
 		assertEquals("WATCH", cs.getMode().toString()); }
 	
 	@Test
-	public void getIconTestOne() {
+	void getIconTestOne() {
 		assertEquals("", cs.getIcon());
 		cs.button3Pressed();
 		assertEquals(" AM", cs.getIcon());
@@ -44,7 +44,7 @@ public class ClockSystemTest {
 		assertEquals(" PM", cs.getIcon());	}
 	
 	@Test
-	public void getIconTestTwo() {
+	void getIconTestTwo() {
 		cs.button1Pressed();
 		cs.button1Pressed();
 		cs.button1Pressed();
@@ -53,19 +53,19 @@ public class ClockSystemTest {
 		assertEquals(" ON", cs.getIcon()); }
 	
 	@Test
-	public void getAlarmObservedTest() {
+	void getAlarmObservedTest() {
 		assertEquals(cs.getAlarm(0), cs.getAlarmObserved());
 		cs.changeAlarmObserved();
 		assertEquals(cs.getAlarm(1), cs.getAlarmObserved()); }
 	
 	@Test
-	public void displayPMTestOne() {
+	void displayPMTestOne() {
 		cs.setTime(new Time(20,00,00));
 		cs.button3Pressed();
 		assertEquals(8,cs.getObservedTime().getHour()); }
 	
 	@Test
-	public void displayPMTestTwo() {
+	void displayPMTestTwo() {
 		cs.setTime(new Time(00,00,00));
 		cs.button3Pressed();
 		assertEquals(12,cs.getObservedTime().getHour()); }
@@ -74,7 +74,7 @@ public class ClockSystemTest {
 	 * Time, ClockTimer, StopWatch, Alarm */
 	
 	@Test
-	public void testSwitch() {
+	void testSwitch() {
 		assertSame(DisplayNormalTime.Instance(), cs.getState());
 		//Alternative test at class level would be:
 		//assertTrue(DisplayNormalTime.class,cs.getState().getClass());
@@ -99,7 +99,7 @@ public class ClockSystemTest {
 		}
 	
 	@Test
-	public void getObservedTimeTest() {
+	void getObservedTimeTest() {
 		assertEquals(cs.getObservedTime(), cs.getTime());
 		cs.button1Pressed();
 		assertEquals(cs.getObservedTime(), cs.getClockTimer().getTime());

@@ -1,5 +1,5 @@
 package org.example.state.compositestate.clocktimer;
 
-abstract public class ClockTimerSettingState extends ClockTimerState {
+public abstract class ClockTimerSettingState extends ClockTimerState {
 	
 }

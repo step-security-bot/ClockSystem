@@ -19,17 +19,20 @@ public class SetClockTimerMinute extends ClockTimerSettingState {
 		if (instance==null) {
 			instance = new SetClockTimerMinute(); }
 		return instance; }
-	
+
+	@Override
 	public void button1Pressed(ClockSystem context) {
 		if (context.hasClock()) {
 			context.getClock().setMinuteColor(Color.BLACK);
 			context.getClock().setSecondColor(new Color(46,127, 189));}
 		context.setState(SetClockTimerSecond.Instance()); }
 
+	@Override
 	public void button2Pressed(ClockSystem context) {
 		context.getClockTimer().getTime().increaseMinute();
 		context.notifyClock(); }
 
+	@Override
 	public void button3Pressed(ClockSystem context) {
 		context.getClockTimer().getTime().decreaseMinute();
 		context.notifyClock(); }

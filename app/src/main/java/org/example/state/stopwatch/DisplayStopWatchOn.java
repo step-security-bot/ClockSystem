@@ -18,16 +18,19 @@ public class DisplayStopWatchOn extends StopWatchDisplayState {
 		if (instance==null) {
 			instance = new DisplayStopWatchOn(); }
 		return instance; }
-	
+
+	@Override
 	public void button1Pressed(ClockSystem context) {
 		DisplayAlarm state = DisplayAlarm.Instance(); 
 		if (context.hasClock()) {
 			state.setClockColor(context); }
 		context.setState(state); }
 
+	@Override
 	public void button2Pressed(ClockSystem context) {
 		context.getStopWatch().addMemoryTime(); }
 
+	@Override
 	public void button3Pressed(ClockSystem context) {
 		context.getStopWatch().stop();
 		context.setState(DisplayStopWatchOff.Instance()); }

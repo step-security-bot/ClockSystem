@@ -19,16 +19,19 @@ public class DisplayNormalTime extends TimeDisplayState {
 		if (instance==null) {
 			instance = new DisplayNormalTime(); }
 		return instance; }
-	
+
+	@Override
 	public void button1Pressed(ClockSystem context) {
 		context.setState(context.getClockTimer().getPowerState()); }
 
+	@Override
 	public void button2Pressed(ClockSystem context) {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(new Color(46,127, 189)); }
 		context.setState(TimeHourSetting.Instance());
 		context.getTimer().cancel(); }
 
+	@Override
 	public void button3Pressed(ClockSystem context) {
 		context.setDisplayState(DisplayBritishTime.Instance()) ;
 		context.setState(DisplayBritishTime.Instance()); }

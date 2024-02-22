@@ -5,7 +5,7 @@ import org.example.component.Mode;
 import org.example.state.compositestate.ClockState;
 import org.example.utility.Time;
 
-abstract public class ClockTimerState extends ClockState {
+public abstract class ClockTimerState extends ClockState {
 		
 	public Mode getMode() { return Mode.CLOCKTIMER; }
 

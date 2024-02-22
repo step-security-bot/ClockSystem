@@ -18,17 +18,20 @@ public class TimeHourSetting extends TimeSettingState {
 		if (instance==null) {
 			instance = new TimeHourSetting(); }
 		return instance; }
-	
+
+	@Override
 	public void button1Pressed(ClockSystem context) {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(Color.BLACK);
 			context.getClock().setMinuteColor(new Color(46,127, 189));}
 		context.setState(TimeMinuteSetting.Instance()); }
 
+	@Override
 	public void button2Pressed(ClockSystem context) {
 		context.getTime().increaseHour();
 		context.notifyClock(); }
 
+	@Override
 	public void button3Pressed(ClockSystem context) {
 		context.getTime().decreaseHour();
 		context.notifyClock(); }

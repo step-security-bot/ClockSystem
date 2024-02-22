@@ -6,7 +6,7 @@ import org.example.component.*;
 import org.example.state.compositestate.ClockState;
 import org.example.utility.Time;
 
-abstract public class AlarmState extends ClockState {
+public abstract class AlarmState extends ClockState {
 
 	public Mode getMode() { return Mode.ALARM; }
 
@@ -21,13 +21,15 @@ abstract public class AlarmState extends ClockState {
 			else { // second alarm
 				context.getClock().setLineInfoTwoColor(new Color(46,127, 189));
 				context.getClock().setLineInfoOneColor(Color.BLACK); } } }
-	
+
+	@Override
 	public String getIcon(ClockSystem context) {
 		if (context.getAlarmObserved().getPowerState()) {
 			return " ON"; }
 		else {
 			return " OFF"; } }
-	
+
+	@Override
 	public String getLineInfo1(ClockSystem context) {
 		String alarmState;
 		if (context.getAlarm(0).getPowerState()) {
@@ -35,7 +37,8 @@ abstract public class AlarmState extends ClockState {
 		else {
 			alarmState = " (OFF)"; }
 		return "    First Alarm : " + context.getAlarm(0).getTime().toString() + alarmState; }
-	
+
+	@Override
 	public String getLineInfo2(ClockSystem context) {
 		String alarmState;
 		if (context.getAlarm(1).getPowerState()) {

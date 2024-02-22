@@ -1,8 +1,5 @@
 package org.example.utility;
 
-import java.lang.IndexOutOfBoundsException;
-import java.lang.IllegalArgumentException;
-
 public class MemoryTimeArray {
 	
 	private Time[] array;
@@ -18,7 +15,7 @@ public class MemoryTimeArray {
 		
 	public void add(Time myTime) {
 		int index = 0;
-		while (array[index]!=null & index!=array.length-1) {
+		while (array[index]!=null && index!=array.length-1) {
 			index++; }
 		if (array[index]==null) {
 			array[index] = myTime; }

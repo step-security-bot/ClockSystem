@@ -6,28 +6,27 @@ import org.example.utility.Time;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
-public class StopWatchTest {
+class StopWatchTest {
 	
 	private StopWatch sw;
 
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
 		sw = new StopWatch(); }
 	
 	@Test
-	public void tickTest() throws InterruptedException {
+	void tickTest() throws InterruptedException {
 		sw.start();
 		Thread.sleep(2100);
 		sw.stop();
-		assertTrue(sw.getTime().equals(new Time(0,0,2)));
+		assertEquals(sw.getTime(), new Time(0, 0, 2));
 		}
 	
 	@Test
-	public void resetingTest() throws InterruptedException {
+	void resetingTest() throws InterruptedException {
 		sw.start();
 		Thread.sleep(2000);
 		sw.stop();

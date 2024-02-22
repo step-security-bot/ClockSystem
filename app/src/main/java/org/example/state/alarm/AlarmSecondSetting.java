@@ -5,9 +5,6 @@ import org.example.state.compositestate.alarm.AlarmSettingState;
 
 import java.awt.Color;
 
-
-//import org.example.state.compositestate.alarm.AlarmSettingState;
-
 public class AlarmSecondSetting extends AlarmSettingState {
 	
 	// use of Singleton design pattern

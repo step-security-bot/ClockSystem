@@ -8,15 +8,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-public class ClockTimerTest {
+class ClockTimerTest {
 	
 	private ClockTimer ct;
 
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
 		ct = new ClockTimer(); }
 	
 	@Test
-	public void startInZeroTest() {
+	void startInZeroTest() {
 		ct.start();
 		assertTrue(ct.getTime().isZero()); } }

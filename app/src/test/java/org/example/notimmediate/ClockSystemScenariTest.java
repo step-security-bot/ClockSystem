@@ -15,12 +15,12 @@ import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 
-public class ClockSystemScenariTest {
+class ClockSystemScenariTest {
 	
 	private ClockSystem cs;
 
 	@BeforeEach
-	public void test() {
+	void setUp() {
 		cs = new ClockSystem(); }
 	
 	/* The next test controls if this scenario(1) is correct :
@@ -30,7 +30,7 @@ public class ClockSystemScenariTest {
 	 * 		- Switch in ClockTimer and being in DisplayClockTimerOff */
 	
 	@Test
-	public void scenarioOneTest() throws InterruptedException {
+	void scenarioOneTest() throws InterruptedException {
 
 		assertSame(DisplayNormalTime.Instance(),cs.getState());
 
@@ -63,7 +63,7 @@ public class ClockSystemScenariTest {
 	 * 		- Switch in ClockTimer and being in DisplayClockTimerOn */
 	
 	@Test
-	public void scenarioTwoTest() throws InterruptedException {
+	void scenarioTwoTest() throws InterruptedException {
 
 		assertSame(DisplayNormalTime.Instance(),cs.getState());
 
@@ -97,7 +97,7 @@ public class ClockSystemScenariTest {
 	 * 		- Switch in StopWatch and being in DisplayStopWatchOn */
 	
 	@Test 
-	public void scenarioThreeTest() throws InterruptedException {
+	void scenarioThreeTest() throws InterruptedException {
 
 		assertSame(DisplayNormalTime.Instance(),cs.getState());
 
@@ -132,7 +132,7 @@ public class ClockSystemScenariTest {
 	 * 		- cs is not ringing anymore ----> second test */
 	
 	@Test 
-	public void scenarioFourTest() throws InterruptedException {
+	void scenarioFourTest() throws InterruptedException {
 
 		assertSame(DisplayNormalTime.Instance(),cs.getState());
 
@@ -156,7 +156,7 @@ public class ClockSystemScenariTest {
 	 * 		- cs return in DisplayClockTimerOff */
 	
 	@Test 
-	public void scenarioFiveTest() throws InterruptedException {
+	void scenarioFiveTest() throws InterruptedException {
 
 		assertSame(DisplayNormalTime.Instance(),cs.getState());
 
@@ -192,7 +192,7 @@ public class ClockSystemScenariTest {
 	 * is aware of the ClockTimer's change of state */
 	
 	@Test 
-	public void scenarioSixTest() throws InterruptedException {
+	void scenarioSixTest() throws InterruptedException {
 
 		assertSame(DisplayNormalTime.Instance(),cs.getState());
 
@@ -232,7 +232,7 @@ public class ClockSystemScenariTest {
 	 * take TriggeredAlarm as a memoryState (else, we got a cycle...) */
 	
 	@Test 
-	public void scenarioSevenTest() throws InterruptedException {
+	void scenarioSevenTest() throws InterruptedException {
 
 		assertSame(DisplayNormalTime.Instance(),cs.getState());
 
@@ -268,7 +268,7 @@ public class ClockSystemScenariTest {
 	 * the alarm */
 	
 	@Test 
-	public void scenarioEigthTest() throws InterruptedException {
+	void scenarioEigthTest() throws InterruptedException {
 
 		assertSame(DisplayNormalTime.Instance(),cs.getState());
 

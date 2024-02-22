@@ -19,16 +19,19 @@ public class DisplayBritishTime extends TimeDisplayState {
 		if (instance==null) {
 			instance = new DisplayBritishTime(); }
 		return instance; }
-	
+
+	@Override
 	public void button1Pressed(ClockSystem context) {
 		context.setState(context.getClockTimer().getPowerState()); }
 
+	@Override
 	public void button2Pressed(ClockSystem context) {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(new Color(46,127, 189)); }
 		context.setState(TimeHourSetting.Instance());
 		context.getTimer().cancel(); }
 
+	@Override
 	public void button3Pressed(ClockSystem context) {
 		context.setDisplayState(DisplayNormalTime.Instance()) ;
 		context.setState(DisplayNormalTime.Instance()); }
@@ -41,7 +44,8 @@ public class DisplayBritishTime extends TimeDisplayState {
 			return new Time(myTime.getHour()-12, myTime.getMinute(), myTime.getSecond()); }
 		else {
 			return myTime; } }
-	
+
+	@Override
 	public String getIcon(ClockSystem context) {
 		if(context.getTime().getHour()>=12) {
 			return " PM"; }

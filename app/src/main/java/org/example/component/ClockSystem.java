@@ -30,7 +30,7 @@ public class ClockSystem implements TimeOwner {
 		clockTimer = new ClockTimer();
 		clockTimer.setClockSystem(this);
 		Alarm[] alarmsArray = {new Alarm(), new Alarm()};
-		alarms = new PointedArray<Alarm>(alarmsArray);
+		alarms = new PointedArray<>(alarmsArray);
 		currentState = DisplayNormalTime.Instance();
 		displayState = DisplayNormalTime.Instance();
 		timer = new TimeTimer(this);
@@ -58,7 +58,7 @@ public class ClockSystem implements TimeOwner {
 		time.tickUp();
 		// During each tick, cycle over all alarms to check whether they need to be triggered...
 		// there is more opportunity for refactoring below, the code is nearly identical!
-		if (getAlarm(0).getPowerState() & getAlarm(0).getTime().equals(time)) {   // Watching if the first alarm has to ring		
+		if (getAlarm(0).getPowerState() && getAlarm(0).getTime().equals(time)) {   // Watching if the first alarm has to ring
 			TriggeredAlarm.initializeMemory(this);
 			alarms.setPointer(0);
 			getAlarm(0).switchPowerState();
@@ -67,7 +67,7 @@ public class ClockSystem implements TimeOwner {
 				clock.setLineInfoOneColor(new Color(46,127, 189));
 				clock.setLineInfoTwoColor(Color.BLACK); }
 			}
-		if (getAlarm(1).getPowerState() & getAlarm(1).getTime().equals(time)) {		// Watching if the second alarm has to ring
+		if (getAlarm(1).getPowerState() && getAlarm(1).getTime().equals(time)) {		// Watching if the second alarm has to ring
 			TriggeredAlarm.initializeMemory(this);
 			alarms.setPointer(1);
 			getAlarm(1).switchPowerState();
@@ -93,11 +93,6 @@ public class ClockSystem implements TimeOwner {
 
 	public void setState(ClockState state) {
 		currentState = state;
-//		System.out.println(
-//				state.getClass().getSimpleName() + " " +
-//				state.getButton1Name() + " " +
-//				state.getButton2Name() + " " +
-//				state.getButton3Name());		
 		notifyClock(); }
 		
 	public void setDisplayState(TimeDisplayState state) {

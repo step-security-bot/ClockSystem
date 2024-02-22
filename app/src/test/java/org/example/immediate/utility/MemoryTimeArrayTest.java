@@ -1,5 +1,4 @@
 package org.example.immediate.utility;
-//package test.immediate.utility;
 
 
 import org.example.utility.MemoryTimeArray;
@@ -10,12 +9,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MemoryTimeArrayTest {
+ class MemoryTimeArrayTest {
 	
 	private MemoryTimeArray memo;
 
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
 		memo = new MemoryTimeArray(3);
 		Time timeOne = new Time(1,0,0);
 		Time timeTwo = new Time(0,1,0);
@@ -25,7 +24,7 @@ public class MemoryTimeArrayTest {
 		memo.add(timeThree); }
 	
 	@Test
-	public void addTest() {
+	void addTest() {
 		Time expected = memo.get(1);
 		Time added = new Time(11,11,11);
 		memo.add(added);

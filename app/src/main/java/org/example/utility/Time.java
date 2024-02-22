@@ -1,5 +1,7 @@
 package org.example.utility;
 
+import java.util.Objects;
+
 public class Time {
 	
 	private int hour;
@@ -86,8 +88,17 @@ public class Time {
 		else {
 			second-=1; } }
 
-	public boolean equals(Time t) {
-		return (this.second==t.getSecond() & this.minute==t.getMinute() & this.hour==t.getHour()); }
+	@Override
+	public boolean equals(Object o) {
+		if (this==o) return true;
+		if (o==null || getClass()!=o.getClass()) return false;
+		Time t = (Time) o;
+		return (this.second==t.getSecond() && this.minute==t.getMinute() && this.hour==t.getHour());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(hour,minute,second); }
 
 	public String toString(int v) {
 		String s = String.valueOf(v);
@@ -95,7 +106,6 @@ public class Time {
 		return s; }
 
 	public boolean isZero() {
-		return (hour==0 & minute==0 & second==0); }
+		return (hour==0 && minute==0 && second==0); }
 	
-	public boolean isOne() {
-		return (hour==0 & minute==0 & second==1); } }
+ }

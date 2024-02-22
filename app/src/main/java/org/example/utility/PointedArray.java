@@ -1,7 +1,5 @@
 package org.example.utility;
 
-import java.lang.IndexOutOfBoundsException;
-
 public class PointedArray<E> {
 	
 	private E[] array;

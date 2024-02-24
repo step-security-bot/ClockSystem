@@ -32,7 +32,7 @@ public class DisplayAlarm extends AlarmDisplayState {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(new Color(46,127, 189)); }
 		context.getAlarmObserved().setPowerState(false);
-		context.setState(AlarmHourSetting.Instance());
+		context.setState(AlarmHourSetting.getInstance());
 		context.notifyClock(); }
 
 	@Override

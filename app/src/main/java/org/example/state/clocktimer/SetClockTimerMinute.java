@@ -15,7 +15,7 @@ public class SetClockTimerMinute extends ClockTimerSettingState {
 		BUTTON_TWO_NAME = "+";
 		BUTTON_THREE_NAME = "-";
 	}
-	public static SetClockTimerMinute Instance() {
+	public static SetClockTimerMinute getInstance() {
 		if (instance==null) {
 			instance = new SetClockTimerMinute(); }
 		return instance; }

@@ -33,6 +33,6 @@ public class DisplayStopWatchOn extends StopWatchDisplayState {
 	@Override
 	public void button3Pressed(ClockSystem context) {
 		context.getStopWatch().stop();
-		context.setState(DisplayStopWatchOff.Instance()); }
+		context.setState(DisplayStopWatchOff.getInstance()); }
 
 }

@@ -14,7 +14,7 @@ public class AlarmHourSetting extends AlarmSettingState {
 		BUTTON_TWO_NAME = "+";
 		BUTTON_THREE_NAME = "-";
 		}
-	public static AlarmHourSetting Instance() {
+	public static AlarmHourSetting getInstance() {
 		if (instance==null) {
 			instance = new AlarmHourSetting(); }
 		return instance; }
@@ -24,7 +24,7 @@ public class AlarmHourSetting extends AlarmSettingState {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(Color.BLACK);
 			context.getClock().setMinuteColor(new Color(46,127, 189));}
-		context.setState(AlarmMinuteSetting.Instance()); }
+		context.setState(AlarmMinuteSetting.getInstance()); }
 
 	@Override
 	public void button2Pressed(ClockSystem context) {

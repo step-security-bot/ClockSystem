@@ -14,7 +14,7 @@ public class TimeHourSetting extends TimeSettingState {
 			BUTTON_TWO_NAME = "+";
 			BUTTON_THREE_NAME = "-";
 	}
-	public static TimeHourSetting Instance() {
+	public static TimeHourSetting getInstance() {
 		if (instance==null) {
 			instance = new TimeHourSetting(); }
 		return instance; }
@@ -24,7 +24,7 @@ public class TimeHourSetting extends TimeSettingState {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(Color.BLACK);
 			context.getClock().setMinuteColor(new Color(46,127, 189));}
-		context.setState(TimeMinuteSetting.Instance()); }
+		context.setState(TimeMinuteSetting.getInstance()); }
 
 	@Override
 	public void button2Pressed(ClockSystem context) {

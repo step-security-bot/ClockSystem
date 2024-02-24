@@ -24,7 +24,7 @@ public class SetClockTimerSecond extends ClockTimerSettingState {
 	public void button1Pressed(ClockSystem context) {
 		if (context.hasClock()) {
 			context.getClock().setSecondColor(Color.BLACK); }
-		context.setState(DisplayClockTimerOff.Instance()); }
+		context.setState(DisplayClockTimerOff.getInstance()); }
 
 	@Override
 	public void button2Pressed(ClockSystem context) {

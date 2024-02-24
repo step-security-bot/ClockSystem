@@ -37,7 +37,7 @@ class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+		assertSame(DisplayClockTimerOff.getInstance(), cs.getState());
 
 		cs.getClockTimer().getTime().setSecond(2);
 		cs.button3Pressed();
@@ -54,7 +54,7 @@ class ClockSystemScenariTest {
 		
 		cs.button1Pressed();
 		
-		assertSame(DisplayClockTimerOff.Instance(),cs.getState()); }
+		assertSame(DisplayClockTimerOff.getInstance(),cs.getState()); }
 	
 	/* The next test controls if this scenario(2) is correct :
 	 * 		- Switch in ClockTimer
@@ -70,7 +70,7 @@ class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+		assertSame(DisplayClockTimerOff.getInstance(), cs.getState());
 
 		cs.getClockTimer().getTime().setSecond(2);
 		cs.button3Pressed();
@@ -105,7 +105,7 @@ class ClockSystemScenariTest {
 		cs.button1Pressed();
 
 		// In StopWatchState
-		assertSame(DisplayStopWatchOff.Instance(), cs.getState());
+		assertSame(DisplayStopWatchOff.getInstance(), cs.getState());
 
 		cs.button3Pressed();
 		
@@ -114,7 +114,7 @@ class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+		assertSame(DisplayClockTimerOff.getInstance(), cs.getState());
 
 		// wait for 1 sec
 		Thread.sleep(1000);
@@ -142,11 +142,11 @@ class ClockSystemScenariTest {
 		// wait for at least 2 seconds
 		Thread.sleep(2500);
 
-		assertSame(TriggeredAlarm.Instance(), cs.getState());
+		assertSame(TriggeredAlarm.getInstance(), cs.getState());
 		
 		cs.button1Pressed();
 		
-		assertNotSame(TriggeredAlarm.Instance(), cs.getState()); }
+		assertNotSame(TriggeredAlarm.getInstance(), cs.getState()); }
 	
 	/* The next test controls if this scenario(5) is correct :
 	 * 		- Set Alarm at 00:00:02
@@ -166,7 +166,7 @@ class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+		assertSame(DisplayClockTimerOff.getInstance(), cs.getState());
 
 		// wait for at least 2 seconds
 		Thread.sleep(2500);
@@ -175,7 +175,7 @@ class ClockSystemScenariTest {
 		
 		cs.button1Pressed();
 		
-		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+		assertSame(DisplayClockTimerOff.getInstance(), cs.getState());
 		
 		}
 	
@@ -202,7 +202,7 @@ class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+		assertSame(DisplayClockTimerOff.getInstance(), cs.getState());
 
 		cs.getClockTimer().getTime().setSecond(2);
 		cs.button3Pressed();
@@ -213,11 +213,11 @@ class ClockSystemScenariTest {
 		Thread.sleep(2500);
 
 		// Alarm is triggering
-		assertSame(TriggeredAlarm.Instance(), cs.getState());
+		assertSame(TriggeredAlarm.getInstance(), cs.getState());
 
 		cs.button1Pressed();
 		
-		assertSame(DisplayClockTimerOff.Instance(),cs.getState(),"this is a flaky test location");
+		assertSame(DisplayClockTimerOff.getInstance(),cs.getState(),"this is a flaky test location");
 		}
 	
 	/* The next test controls if this scenario(7) is correct :
@@ -246,17 +246,17 @@ class ClockSystemScenariTest {
 		cs.button1Pressed();
 		
 		// In ClockTimer
-		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+		assertSame(DisplayClockTimerOff.getInstance(), cs.getState());
 
 		// wait for at least 2 seconds to trigger alarm
 		Thread.sleep(2500);
 
 		// Alarm is triggering
-		assertSame(TriggeredAlarm.Instance(), cs.getState());
+		assertSame(TriggeredAlarm.getInstance(), cs.getState());
 
 		cs.button1Pressed();
 		
-		assertSame(DisplayClockTimerOff.Instance(), cs.getState()); }
+		assertSame(DisplayClockTimerOff.getInstance(), cs.getState()); }
 	
 	/* The next test controls if this scenario(8) is correct :
 	 * 		- Set alarm at 01:00:00
@@ -282,6 +282,6 @@ class ClockSystemScenariTest {
 		Thread.sleep(1500);
 
 		// Alarm is triggering
-		assertSame(TriggeredAlarm.Instance(), cs.getState());
+		assertSame(TriggeredAlarm.getInstance(), cs.getState());
 		}
 	}

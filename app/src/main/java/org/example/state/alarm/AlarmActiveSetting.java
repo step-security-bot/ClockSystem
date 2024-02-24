@@ -14,7 +14,7 @@ public class AlarmActiveSetting extends AlarmSettingState {
 		BUTTON_TWO_NAME = "ON/OFF";
 		BUTTON_THREE_NAME = "";
 	}
-	public static AlarmActiveSetting Instance() {
+	public static AlarmActiveSetting getInstance() {
 		if (instance==null) {
 			instance = new AlarmActiveSetting(); }
 		return instance; }

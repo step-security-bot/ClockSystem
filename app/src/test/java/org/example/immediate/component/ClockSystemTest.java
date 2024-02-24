@@ -80,19 +80,19 @@ class ClockSystemTest {
 		//assertTrue(DisplayNormalTime.class,cs.getState().getClass());
 
 		cs.button3Pressed();
-		assertSame(DisplayBritishTime.Instance(), cs.getState());
+		assertSame(DisplayBritishTime.getInstance(), cs.getState());
 		
 		cs.button1Pressed();
-		assertSame(DisplayClockTimerOff.Instance(), cs.getState());
+		assertSame(DisplayClockTimerOff.getInstance(), cs.getState());
 		
 		cs.button1Pressed();
-		assertSame(DisplayStopWatchOff.Instance(), cs.getState());
+		assertSame(DisplayStopWatchOff.getInstance(), cs.getState());
 		
 		cs.button1Pressed();
 		assertSame(DisplayAlarm.Instance(), cs.getState());
 		
 		cs.button1Pressed();
-		assertSame(DisplayBritishTime.Instance(), cs.getState());
+		assertSame(DisplayBritishTime.getInstance(), cs.getState());
 		
 		cs.button3Pressed();
 		assertSame(DisplayNormalTime.Instance(), cs.getState());

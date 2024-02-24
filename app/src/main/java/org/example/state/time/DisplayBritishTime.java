@@ -15,7 +15,8 @@ public class DisplayBritishTime extends TimeDisplayState {
 			BUTTON_TWO_NAME = "SET";
 			BUTTON_THREE_NAME = "DISPLAY MODE";
 	}
-	public static DisplayBritishTime Instance() {
+
+	public static DisplayBritishTime getInstance() {
 		if (instance==null) {
 			instance = new DisplayBritishTime(); }
 		return instance; }
@@ -28,7 +29,7 @@ public class DisplayBritishTime extends TimeDisplayState {
 	public void button2Pressed(ClockSystem context) {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(new Color(46,127, 189)); }
-		context.setState(TimeHourSetting.Instance());
+		context.setState(TimeHourSetting.getInstance());
 		context.getTimer().cancel(); }
 
 	@Override

@@ -13,7 +13,7 @@ public class DisplayStopWatchOff extends StopWatchDisplayState {
 		BUTTON_TWO_NAME = "RESET";
 		BUTTON_THREE_NAME = "ON";
 	}
-	public static DisplayStopWatchOff Instance() {
+	public static DisplayStopWatchOff getInstance() {
 		if (instance==null) {
 			instance = new DisplayStopWatchOff(); }
 		return instance; }

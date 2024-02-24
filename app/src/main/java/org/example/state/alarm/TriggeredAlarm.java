@@ -1,7 +1,6 @@
 package org.example.state.alarm;
 
 import java.awt.Color;
-import java.util.Timer;
 
 
 import org.example.component.Alarm;
@@ -19,7 +18,7 @@ public class TriggeredAlarm extends AlarmSettingState {
 		BUTTON_TWO_NAME = "";
 		BUTTON_THREE_NAME = "";
 	}
-	public static TriggeredAlarm Instance() {
+	public static TriggeredAlarm getInstance() {
 		if (instance==null) {
 			instance = new TriggeredAlarm(); }
 		return instance; }

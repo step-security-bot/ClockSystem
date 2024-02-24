@@ -28,13 +28,13 @@ public class DisplayNormalTime extends TimeDisplayState {
 	public void button2Pressed(ClockSystem context) {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(new Color(46,127, 189)); }
-		context.setState(TimeHourSetting.Instance());
+		context.setState(TimeHourSetting.getInstance());
 		context.getTimer().cancel(); }
 
 	@Override
 	public void button3Pressed(ClockSystem context) {
-		context.setDisplayState(DisplayBritishTime.Instance()) ;
-		context.setState(DisplayBritishTime.Instance()); }
+		context.setDisplayState(DisplayBritishTime.getInstance()) ;
+		context.setState(DisplayBritishTime.getInstance()); }
 
 	public Time getObservedTime(ClockSystem context) {
 		return context.getTime(); } }

@@ -18,7 +18,7 @@ public class StopWatch implements TimeOwner {
 	private TimeTimer stopWatchTimer;
 	
 	public StopWatch() {
-		powerState = DisplayStopWatchOff.Instance();
+		powerState = DisplayStopWatchOff.getInstance();
 		time = new Time();
 		memoryTime = new MemoryTimeArray(3); }
 	
@@ -60,5 +60,5 @@ public class StopWatch implements TimeOwner {
 		stopWatchTimer.start(); }
 		
 	public void stop() {
-		powerState = DisplayStopWatchOff.Instance();
+		powerState = DisplayStopWatchOff.getInstance();
 		stopWatchTimer.cancel(); } }

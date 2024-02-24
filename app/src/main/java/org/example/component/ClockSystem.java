@@ -62,7 +62,7 @@ public class ClockSystem implements TimeOwner {
 			TriggeredAlarm.initializeMemory(this);
 			alarms.setPointer(0);
 			getAlarm(0).switchPowerState();
-			currentState = TriggeredAlarm.Instance();
+			currentState = TriggeredAlarm.getInstance();
 			if (hasClock()) {
 				clock.setLineInfoOneColor(new Color(46,127, 189));
 				clock.setLineInfoTwoColor(Color.BLACK); }
@@ -71,7 +71,7 @@ public class ClockSystem implements TimeOwner {
 			TriggeredAlarm.initializeMemory(this);
 			alarms.setPointer(1);
 			getAlarm(1).switchPowerState();
-			currentState = TriggeredAlarm.Instance();
+			currentState = TriggeredAlarm.getInstance();
 			if (hasClock()) {
 				clock.setLineInfoTwoColor(new Color(46,127, 189));
 				clock.setLineInfoOneColor(Color.BLACK); }

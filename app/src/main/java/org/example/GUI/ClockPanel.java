@@ -20,7 +20,8 @@ public class ClockPanel extends JPanel {
 		super();
 		this.context=context;
 		setPreferredSize(new Dimension(220,220)); }
-	
+
+	@Override
 	public void paintComponent(Graphics g) {
 		try { 			
 			Graphics2D g2 = (Graphics2D) g;

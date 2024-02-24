@@ -26,7 +26,7 @@ class ClockTimerTest {
 		assertSame(DisplayClockTimerOn.Instance(), ct.getPowerState());
 		
 		Thread.sleep(2100);
-		assertSame(DisplayClockTimerOff.Instance(), ct.getPowerState());
+		assertSame(DisplayClockTimerOff.getInstance(), ct.getPowerState());
 		}
 	
 	@Test

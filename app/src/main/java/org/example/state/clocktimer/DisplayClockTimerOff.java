@@ -14,7 +14,7 @@ public class DisplayClockTimerOff extends ClockTimerDisplayState {
 		BUTTON_TWO_NAME = "SET";
 		BUTTON_THREE_NAME = "ON";
 	}
-	public static DisplayClockTimerOff Instance() {
+	public static DisplayClockTimerOff getInstance() {
 		if (instance==null) {
 			instance = new DisplayClockTimerOff(); }
 		return instance; }
@@ -27,7 +27,7 @@ public class DisplayClockTimerOff extends ClockTimerDisplayState {
 	public void button2Pressed(ClockSystem context) {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(new Color(46,127, 189)); }
-		context.setState(SetClockTimerHour.Instance());
+		context.setState(SetClockTimerHour.getInstance());
 		context.notifyClock(); }
 
 	@Override

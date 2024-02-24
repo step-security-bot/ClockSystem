@@ -15,7 +15,7 @@ public class SetClockTimerHour extends ClockTimerSettingState {
 		BUTTON_TWO_NAME = "+";
 		BUTTON_THREE_NAME = "-";
 	}
-	public static SetClockTimerHour Instance() {
+	public static SetClockTimerHour getInstance() {
 		if (instance==null) {
 			instance = new SetClockTimerHour(); }
 		return instance; }
@@ -25,7 +25,7 @@ public class SetClockTimerHour extends ClockTimerSettingState {
 		if (context.hasClock()) {
 			context.getClock().setHourColor(Color.BLACK);
 			context.getClock().setMinuteColor(new Color(46,127, 189));}
-		context.setState(SetClockTimerMinute.Instance()); }
+		context.setState(SetClockTimerMinute.getInstance()); }
 
 	@Override
 	public void button2Pressed(ClockSystem context) {

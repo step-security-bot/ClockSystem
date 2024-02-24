@@ -24,4 +24,4 @@ public class DisplayClockTimerOn extends ClockTimerDisplayState {
 	@Override
 	public void button3Pressed(ClockSystem context) {
 		context.getClockTimer().stop();
-		context.setState(DisplayClockTimerOff.Instance()); } }
+		context.setState(DisplayClockTimerOff.getInstance()); } }

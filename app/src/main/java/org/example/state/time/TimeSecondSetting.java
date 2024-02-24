@@ -14,7 +14,7 @@ public class TimeSecondSetting extends TimeSettingState {
 		BUTTON_TWO_NAME = "+";
 		BUTTON_THREE_NAME = "-";
 		}
-	public static TimeSecondSetting Instance() {
+	public static TimeSecondSetting getInstance() {
 		if (instance==null) {
 			instance = new TimeSecondSetting(); }
 		return instance; }

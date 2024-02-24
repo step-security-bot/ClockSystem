@@ -15,7 +15,7 @@ public class ClockTimer implements TimeOwner {
 	
 	public ClockTimer() {
 		time = new Time();
-		powerState = DisplayClockTimerOff.Instance(); }
+		powerState = DisplayClockTimerOff.getInstance(); }
 
 	public Time getTime() {
 		return time; }
@@ -31,7 +31,7 @@ public class ClockTimer implements TimeOwner {
 				clockSystem.getState()== DisplayClockTimerOn.Instance()) {
 			clockSystem.setState(powerState); }
 		if (clockSystem!=null &&
-				clockSystem.getState()== TriggeredAlarm.Instance() &&
+				clockSystem.getState()== TriggeredAlarm.getInstance() &&
 				TriggeredAlarm.getMemoryState()==DisplayClockTimerOn.Instance()) {
 			TriggeredAlarm.setMemoryState(powerState); } }
 
@@ -55,7 +55,7 @@ public class ClockTimer implements TimeOwner {
 		notifyClockSystem(); }
 		
 	public void stop() {
-		powerState = DisplayClockTimerOff.Instance();
+		powerState = DisplayClockTimerOff.getInstance();
 		clockTimerTimer.cancel(); }
 		
 	public void start() {

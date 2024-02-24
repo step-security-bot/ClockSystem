@@ -3,7 +3,7 @@ package org.example.state.compositestate.stopwatch;
 import org.example.component.*;
 import org.example.utility.Time;
 
-abstract public class StopWatchDisplayState extends StopWatchState {
+public abstract class StopWatchDisplayState extends StopWatchState {
 
 	String emptySpaces = "      ";
 

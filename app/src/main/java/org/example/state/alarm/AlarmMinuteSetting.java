@@ -14,7 +14,7 @@ public class AlarmMinuteSetting extends AlarmSettingState {
 			BUTTON_TWO_NAME = "+";
 			BUTTON_THREE_NAME = "-";
 			}
-	public static AlarmMinuteSetting Instance() {
+	public static AlarmMinuteSetting getInstance() {
 		if (instance==null) {
 			instance = new AlarmMinuteSetting(); }
 		return instance; }

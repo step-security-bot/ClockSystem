@@ -24,7 +24,7 @@ public class AlarmSecondSetting extends AlarmSettingState {
 		if (context.hasClock()) {
 			context.getClock().setSecondColor(Color.BLACK);
 			context.getClock().setIconColor(new Color(46,127, 189)); }
-		context.setState(AlarmActiveSetting.Instance()); }
+		context.setState(AlarmActiveSetting.getInstance()); }
 
 	@Override
 	public void button2Pressed(ClockSystem context) {

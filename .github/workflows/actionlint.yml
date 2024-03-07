@@ -34,7 +34,7 @@ jobs:
       id: action-lint
       
     - name: "Upload Artifact"
-      uses: actions/upload-artificact@v4.3.1
+      uses: actions/upload-artifact@v4.3.1
       with:
         name: actionlint-results
         path: ${{ steps.action-lint.outputs.results-file }}

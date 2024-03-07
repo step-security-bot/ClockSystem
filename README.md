@@ -1,5 +1,7 @@
 ![Build Status](https://github.com/DanLoris/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 [![PMD Analysis](https://github.com/DanLoris/ClockSystem/actions/workflows/pmdanalysis.yml/badge.svg)](https://github.com/DanLoris/ClockSystem/actions/workflows/pmdanalysis.yml)
+[![CodeQL Security Analysis](https://github.com/DanLoris/ClockSystem/actions/workflows/codeql.yml/badge.svg)](https://github.com/DanLoris//ClockSystem/actions/workflows/pmdanalysis.yml)
+
 
 # ClockSystem
 

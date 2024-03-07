@@ -1,4 +1,5 @@
 ![Gradle Build](https://github.com/RomeoXXIV/ClockSystem/actions/workflows/gradle.yml/badge.svg)
+![PMD Code Analysis](https://github.com/RomeoXXIV/ClockSystem/actions/workflows/pmd-analysis.yml/badge.svg)
 
 # ClockSystem
 

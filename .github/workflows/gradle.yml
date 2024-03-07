@@ -46,3 +46,9 @@ jobs:
       
     - name: Build with Gradle 8.5
       run: gradle build
+
+    - name: Test reporting
+      uses: actions/upload-artifact@v4
+      with:
+        path: app/build/reports/tests
+

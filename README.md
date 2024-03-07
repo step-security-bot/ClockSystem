@@ -17,3 +17,4 @@ The application has been tested locally with Java 21 and Gradle 8.5 (on MacOS). 
 "./gradlew run" (executes the Java application by opening a graphical user interface you can interact with)
 
 ![example workflow](https://github.com/MarineB210/ClockSystem/actions/workflows/gradle.yml/badge.svg)
+![pmd](https://github.com/MarineB210/ClockSystem/actions/workflows/pmd.yml/badge.svg)

@@ -1,4 +1,4 @@
-![example workflow](https://github.com/uhourri/ClockSystem/actions/workflows/WF-FILE.yml/badge.svg)
+![example workflow](https://github.com/uhourri/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 
 
 

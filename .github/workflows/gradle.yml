@@ -28,9 +28,7 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    - uses: actions/upload-artifact@v4
-    with:
-    path: app/build/reports/tests
+   
 
     # # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
     # # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
@@ -48,3 +46,8 @@ jobs:
     
     - name: Build with Gradle 8.5
       run: gradle build
+
+    - name : Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        path: app/build/reports/tests

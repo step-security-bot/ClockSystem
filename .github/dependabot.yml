@@ -4,12 +4,10 @@ updates:
     directory: "/"  # Assuming your build.gradle.kts is in the root directory
     schedule:
       interval: "daily"  # You can adjust the interval as needed
-    open-pull-requests-limit: 10  # Limit the number of open pull requests
   - package-ecosystem: "github-actions"
   # Workflow files stored in the default location of `.github/workflows`
     directory: "/"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 10
 
 # Optionally, you can specify additional update configurations if needed.

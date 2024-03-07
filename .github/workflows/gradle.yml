@@ -31,6 +31,13 @@ jobs:
       with: 
         gradle-version: '8.5'
 
+    - name: Set up Xvfb
+      run: |
+        sudo apt-get update -y
+        sudo apt-get install -y xvfb
+        Xvfb :99 -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &
+        echo "DISPLAY=:99.0" >> $GITHUB_ENV
+
     - name: Build with Gradle 
       run: gradle build
 
@@ -38,4 +45,4 @@ jobs:
       uses: actions/upload-artifact@v4.3.1
       with:
         name: test-report
-        path: build/reports/tests/
+        path: app/build/reports/tests/

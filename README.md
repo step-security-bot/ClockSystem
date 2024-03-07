@@ -1,5 +1,6 @@
 ![example workflow](https://github.com/uhourri/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 ![example workflow](https://github.com/uhourri/ClockSystem/actions/workflows/pmd.yml/badge.svg)
+![example workflow](https://github.com/uhourri/ClockSystem/actions/workflows/codeql.yml/badge.svg)
 
 
 

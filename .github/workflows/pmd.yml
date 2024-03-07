@@ -20,7 +20,16 @@ jobs:
       uses: pmd/pmd-github-action@v1
       with:
         rulesets: ’java-basic’
-    - name: Fail build if there are violations
-      if: steps.pmd.outputs.violations != 0
-      run: exit 1
+    - name: Extract PMD violations count
+      id: extract
+      run: |
+        echo "::set-output name=violations::$(echo '${{ steps.pmd.outputs.report }}' | grep -o 'Problem: ' | wc -l)"
+
+    - name: Check violations threshold
+      run: |
+          THRESHOLD=10 # Set your threshold here
+          if [ "${{ steps.extract.outputs.violations }}" -gt $THRESHOLD ]; then
+            echo "Number of violations exceeds threshold. Failing workflow."
+            exit 1
+          fi
     

@@ -16,5 +16,6 @@ The application has been tested locally with Java 21 and Gradle 8.5 (on MacOS). 
 
 "./gradlew run" (executes the Java application by opening a graphical user interface you can interact with)
 
-![gradle workflow](https://github.com/SamuelSVG/ClockSystem/actions/workflows/gradle.yml/badge.svg)
+![Gradle workflow](https://github.com/SamuelSVG/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 ![PMD Code Analysis workflow](https://github.com/SamuelSVG/ClockSystem/actions/workflows/pmd.yml/badge.svg)
+![CodeQL workflow](https://github.com/SamuelSVG/ClockSystem/actions/workflows/codeql.yml/badge.svg)

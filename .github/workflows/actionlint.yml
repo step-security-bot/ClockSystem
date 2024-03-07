@@ -1,26 +1,24 @@
-name: ActionLint Workflow
+name: Action lint
 
 on:
-  pull_request:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  actionlint:
+  action-lint:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Run ActionLint
-        id: action-lint
-        uses: devops-actions/actionlint@v1  # Replace with the desired version or SHA
+      - uses: devops-actions/actionlint@48ca80d7da4ffd5ed31b7981702bc6bb4b242c63
+        name: Rhysd actionlint
         continue-on-error: true
+        id: action-lint
 
-      - name: Upload ActionLint Results
-        uses: actions/upload-artifact@v2
+      - name: Upload results
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: actionlint-results
           path: ${{ steps.action-lint.outputs.results-file }}

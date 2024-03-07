@@ -32,8 +32,5 @@ jobs:
         with:
           languages: java
 
-      - name: Build project
-        run: build gradle
-
       - name: Run CodeQL analysis
         uses: github/codeql-action/analyze@v1

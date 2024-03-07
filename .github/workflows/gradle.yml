@@ -15,41 +15,45 @@ on:
 
 jobs:
   build:
+    env:
+      DISPLAY: ":99.0"
+
+    services:
+      xvfb:
+        image: selenium/standalone-chrome:latest
+        options: -e VNC_SERVER=true -e VNC_PORT=5900
 
     runs-on: ubuntu-latest
     permissions:
       contents: read
 
-    env:
-      DISPLAY: ":99."
-    services:
-      xvfb:
-        image: selenium/standalone-chrome:latest
-        options: -e VNC_SERVER=true -e VNC_PORT=59000"
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
+      - name: Start Xvfb
+        run: Xvfb $DISPLAY -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &
 
-    - name: Start Xvfb
-      run: Xvfb $DISPLAY -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
 
-    # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
-    # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+      # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
+      # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
+      #
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+        with:
+          gradle-version: '8.5'
+      - name: Build with Gradle 8.5
+        run: gradle build
 
-    - name: Build with Gradle
-      run: gradle build
-
-    # Add an extra step to publish a test report in the workflow summary
-    - name: Publish Test Report
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-report
-        path: build/test-results
+      - name: Upload report
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          # Artifact name
+          name: tests_report
+          # optional, default is artifact
+          # A file, directory or wildcard pattern that describes what to upload
+          path: app/build/reports/tests
 

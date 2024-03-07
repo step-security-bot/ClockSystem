@@ -1,0 +1,26 @@
+name: Static Code Analysis with PMD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pmd-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Run PMD Code Analysis
+      uses: pmd/pmd-github-action@v1.4.1
+      with:
+        rulesets: 'java-basic'
+        failOnViolation: true
+        minimumPriority: 5

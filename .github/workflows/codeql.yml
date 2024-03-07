@@ -85,3 +85,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         sparse-checkout: .
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2  # Use the latest version
+      with:
+        languages: java  # Specify the language for CodeQL analysis

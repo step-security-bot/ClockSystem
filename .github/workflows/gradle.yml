@@ -20,6 +20,14 @@ jobs:
     permissions:
       contents: read
 
+    env:
+      DISPLAY: ":99.0" # Set a display for Xvfb
+
+    services:
+      xvfb:
+        image: selenium/standalone-chrome:latest
+        options: -e VNC_SERVER=true -e VNC_PORT=5900
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -46,3 +54,7 @@ jobs:
     
     - name: Build with Gradle 8.5
       run: gradle build
+
+    - name: Start Xvfb
+      run: Xvfb $DISPLAY -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &
+

@@ -23,6 +23,11 @@ jobs:
         with:
           rulesets: 'java-basic'
           analyzeModifiedFilesOnly: false
+          
+      - name: Fail build if there are violations
+        if: steps.pmd.outputs.violations > 2
+        run: exit 1
+      
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
         with:

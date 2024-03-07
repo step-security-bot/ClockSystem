@@ -32,7 +32,6 @@ jobs:
         id: pmd
         uses: pmd/pmd-github-action@v1
         with:
-          sourcePath: 'app/main/java'
           rulesets: 'java-basic'
 
       - name: Upload SARIF file

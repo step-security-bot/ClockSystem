@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # Enable version updates for Gradle
+  - package-ecosystem: "gradle"
+    directory: "/" # Location of the root directory where the build.gradle file is
+    schedule:
+      interval: "weekly" # ls Check for updates daily
+    commit-message:
+      prefix: "chore" # Prefix for commit messages
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/" # Location of the root directory where the .github/workflows are
+    schedule:
+      interval: "weekly" # Check for updates daily
+    commit-message:
+      prefix: "chore" # Prefix for commit messages

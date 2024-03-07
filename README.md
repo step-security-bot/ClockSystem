@@ -1,5 +1,7 @@
 # ClockSystem
 
+![gradle workflow](https://github.com/LicorneRose765/ClockSystem/actions/workflows/gradle.yml/badge.svg)
+
 This is a gradle-based Java project for a Clock with Swing GUI and JUnit5 unit tests. It has been created and used by Tom Mens for educational purposes at the University of Mons.
 
 The application includes a watch, with timer, stopwatch and alarm functionality.

@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.Objects;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -29,7 +30,7 @@ public class ClockPanel extends JPanel {
 			
 			super.paintComponent(g2);
 			
-			ImageIcon image = new ImageIcon(getClass().getResource("/pictures/cadran.png"));
+			ImageIcon image = new ImageIcon(ClockPanel.class.getResource("/pictures/cadran.png"));
 			g2.drawImage(image.getImage(), -getWidth()/2, -getHeight()/2, null);
 			
 			double secondeAngle = (Math.PI/2) - (Math.PI*context.getObservedTime().getSecond()/30);
@@ -49,6 +50,6 @@ public class ClockPanel extends JPanel {
 			g2.drawLine(0,0, (int) (75*Math.cos(secondeAngle)), (int) (-75*Math.sin(secondeAngle))); }
 		
 		catch (Exception e) { e.printStackTrace(); } }
-		
+
 	public void update() {
 		this.repaint(); } }

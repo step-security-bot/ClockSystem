@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  pmd-analysis:
+  pmd-code-scan:
     name: PMD Code Analysis
     runs-on: ubuntu-latest
 

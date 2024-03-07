@@ -4,7 +4,7 @@
 ![PMD](https://github.com/LicorneRose765/ClockSystem/actions/workflows/pmd.yml/badge.svg)
 ![CodeQL](https://github.com/LicorneRose765/ClockSystem/actions/workflows/codeql.yml/badge.svg)
 ![ScoreCard](https://github.com/LicorneRose765/ClockSystem/actions/workflows/scorecard.yml/badge.svg)
-
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/LicorneRose765/ClockSystem/badge)](https://securityscorecards.dev/viewer/?uri=github.com/LicorneRose765/ClockSystem)
 This is a gradle-based Java project for a Clock with Swing GUI and JUnit5 unit tests. It has been created and used by Tom Mens for educational purposes at the University of Mons.
 
 The application includes a watch, with timer, stopwatch and alarm functionality.

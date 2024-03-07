@@ -14,7 +14,7 @@ jobs:
         run: ${{ steps.get_actionlint.outputs.executable }} -color
         shell: bash
 
-      - uses : action/upload-artifact@v3
+      - uses : actions/upload-artifact@v3
         with:
           name: actionlint-results
           path: ${{ steps.action-lint.outputs.results-file }}

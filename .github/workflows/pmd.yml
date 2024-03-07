@@ -39,6 +39,6 @@ jobs:
         if: steps.pmd.outputs.violations != 0
         run: exit 1
       - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v1
+        uses: github/codeql-action/upload-sarif@v2.16.4
         with:
           sarif_file: pmd-report.sarif

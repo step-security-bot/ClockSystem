@@ -20,6 +20,14 @@ jobs:
     permissions:
       contents: read
 
+    services:
+      xvfb:
+        image: selenium/standalone-chrome:latest
+        options: -e VNC_SERVER=true -e VNC_PORT=5900
+
+    env:
+      DISPLAY: ":99.0"
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -27,6 +35,9 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
+    
+    - name: Start Xvfb
+      run: Xvfb $DISPLAY -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &
 
     # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
@@ -43,6 +54,9 @@ jobs:
       uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
       with:
         gradle-version: '8.5'
+
+    with:
+      path: app/build/reports/tests
     
     - name: Build with Gradle 8.5
       run: gradle build

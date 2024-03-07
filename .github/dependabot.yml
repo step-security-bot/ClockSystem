@@ -12,9 +12,9 @@ updates:
     schedule:
       interval: "weekly"
     commit-message:
-      # Prefix all commit messages with "maven: "
+      # Prefix all commit messages with "gradle: "
       prefix: "gradle"
-    # Allow up to 10 open pull requests for maven dependencies (default is 5)
+    # Allow up to 10 open pull requests for gradle dependencies (default is 5)
     open-pull-requests-limit: 10
 
 

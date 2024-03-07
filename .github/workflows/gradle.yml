@@ -38,7 +38,7 @@ jobs:
 
     
     - name: Test reporting
-      uses: actions/upload_artifact@v4.3.1
+      uses: actions/upload-artifact@v4.3.1
       with:
         path: app/build/reports/tests
 

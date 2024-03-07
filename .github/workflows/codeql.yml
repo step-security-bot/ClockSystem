@@ -21,8 +21,6 @@ jobs:
         with:
           rulesets: 'java-basic'
 
-      - name: Upload PMD Report
-        uses: actions/upload-artifact@v2
-        with:
-          name: pmd-report
-          path: target/pmd.xml
+      - name: Fail build if there are violations
+        if: steps.pmd.outputs.violations != 0
+        run: exit 1

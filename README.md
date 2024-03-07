@@ -1,4 +1,6 @@
 ![GitHub Workflow](https://github.com/JordanDemaret/ClockSystem/actions/workflows/gradle.yml/badge.svg)
+![PMD Workflow](https://github.com/JordanDemaret/ClockSystem/actions/workflows/pmd.yml/badge.svg)
+
 
 
 # ClockSystem

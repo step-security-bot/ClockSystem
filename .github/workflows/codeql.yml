@@ -27,7 +27,9 @@ jobs:
       - name: Initialize CodeQL for security scanning
         uses: github/codeql-action/init@v3
         with: 
-          languages: 'java-kotlin'
+          languages: 'java'
+          queries: security-experimental,security-extended,security-and-quality
+
 
       - name: "Compile Java source code with Gradle"
         run: gradle build -x test
@@ -35,5 +37,5 @@ jobs:
       - name: "Perform CodeQL Analysis"
         uses: github/codeql-action/analyze@v3
         with:
-          category: "/language:java-kotlin"
+          category: "/language:java"
           

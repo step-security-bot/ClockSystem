@@ -8,7 +8,7 @@
 name: Java CI with Gradle
 
 on:
-  commit_comment:
+  push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]

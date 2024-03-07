@@ -17,7 +17,7 @@ jobs:
         java-version: '21'
         
     - name: Run PMD Static Code Analysis 
-      uses: pmd/pmd-github-action@v4
+      uses: pmd/pmd-github-action@v1
       with:
         rulesets: ’java-basic’
     - name: Fail build if there are violations

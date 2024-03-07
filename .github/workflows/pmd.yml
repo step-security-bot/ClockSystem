@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: pmd
+name: PMD code scan
 
 on:
   push:
@@ -30,18 +30,6 @@ jobs:
           distribution: 'temurin'
       - name: Run PMD
         id: pmd
-        
-  quality:
-    name: "Code quality analysis"
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: PMD Static Code Analysis
         uses: pmd/pmd-github-action@v3
         with:
           rulesets: 'java-basic'

@@ -34,13 +34,6 @@ jobs:
         with:
           rulesets: 'java-basic'
 
-      - name: "Upload artifact"
-        uses: actions/upload-artifact@v4
-        with:
-          name: SARIF file
-          path: pmd-report.sarif
-          retention-days: 5
-
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:

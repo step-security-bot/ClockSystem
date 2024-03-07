@@ -1,0 +1,28 @@
+name: Static Code Analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  static-code-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Static Code Analysis with PMD
+        uses: pmd/pmd-github-action@v1
+        with:
+          rulesets: 'java-basic'
+
+      - name: Upload PMD Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: pmd-report
+          path: target/pmd.xml

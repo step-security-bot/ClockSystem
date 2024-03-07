@@ -15,7 +15,7 @@ jobs:
     - name: Run PMD Static Code Analysis 
       uses: pmd/pmd-github-action@v1
       with:
-        rulesets: ’java-basic’
+        rulesets: 'java-basic'
     - name: Extract PMD violations count
       id: extract
       run: |

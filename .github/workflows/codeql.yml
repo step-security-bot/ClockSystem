@@ -33,4 +33,4 @@ jobs:
           languages: java
 
       - name: Run CodeQL analysis
-        uses: github/codeql-action/analyze@v1
+        uses: github/codeql-action/analyze@v2

@@ -2,6 +2,7 @@
 ![example workflow](https://github.com/uhourri/ClockSystem/actions/workflows/pmd.yml/badge.svg)
 ![example workflow](https://github.com/uhourri/ClockSystem/actions/workflows/codeql.yml/badge.svg)
 ![example workflow](https://github.com/uhourri/ClockSystem/actions/workflows/scorecard.yml/badge.svg)
+![example workflow](https://github.com/uhourri/ClockSystem/actions/workflows/actionlint.yml/badge.svg)
 
 
 

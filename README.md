@@ -1,6 +1,7 @@
 Code quality: ![Gradle Build](https://github.com/MokonaNico/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 [![PMD Analysis](https://github.com/MokonaNico/ClockSystem/actions/workflows/pmd.yml/badge.svg)](https://github.com/MokonaNico/ClockSystem/actions/workflows/pmd.yml)
 ![CodeQL](https://github.com/MokonaNico/ClockSystem/actions/workflows/codeql.yml/badge.svg)
+![ScoreCard](https://github.com/MokonaNico/ClockSystem/actions/workflows/scorecard.yml/badge.svg)
 
 # ClockSystem
 

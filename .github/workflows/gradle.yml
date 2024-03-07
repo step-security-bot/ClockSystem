@@ -17,7 +17,7 @@ jobs:
       contents: read
 
     env:
-      DISPLAY: ":99.0"  % Set a display for Xvfb
+      DISPLAY: ":99.0"
 
     services:
       xvfb:

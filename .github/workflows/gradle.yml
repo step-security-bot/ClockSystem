@@ -37,3 +37,14 @@ jobs:
         gradle-version: '8.5'
     - name: Build with Gradle 8.5
       run: gradle build
+
+    - name: Upload report
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        # Artifact name
+        name: tests_report
+        # optional, default is artifact
+        # A file, directory or wildcard pattern that describes what to upload
+        path: app/build/reports/tests
+        
+

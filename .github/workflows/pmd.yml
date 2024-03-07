@@ -39,3 +39,7 @@ jobs:
         with:
           sarif_file: pmd-report.sarif
 
+      - name: Fail build if PMD found issues
+        if: steps.pmd.outputs.violations > 3 # fail if it exceeds 3 issues
+        run: exit 1
+

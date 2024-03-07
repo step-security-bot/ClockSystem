@@ -81,7 +81,7 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
-        category: "/language:${{matrix.language}}"
+        category: "/language:java"
     - uses: actions/checkout@v4
       with:
         sparse-checkout: .
@@ -99,7 +99,4 @@ jobs:
         languages: "java"
         queries: security-experimental,security-extended,security-and-quality
         
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-      with:
-       category: "java"
+    

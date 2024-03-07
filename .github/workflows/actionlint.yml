@@ -32,8 +32,9 @@ jobs:
     - uses: devops-actions/actionlint@v0.1.2
       continue-on-error: true
       id: action-lint
+      
     - name: "Upload Artifact"
-    - uses: actions/upload-artificact@v4.3.1
+      uses: actions/upload-artificact@v4.3.1
       with:
         name: actionlint-results
         path: ${{ steps.action-lint.outputs.results-file }}

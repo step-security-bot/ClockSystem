@@ -15,3 +15,5 @@ The application has been tested locally with Java 21 and Gradle 8.5 (on MacOS). 
 "./gradlew build" (executes the generated wrapper to build and test the application; build should be successful, but will fail if some of the unit tests fail)
 
 "./gradlew run" (executes the Java application by opening a graphical user interface you can interact with)
+
+![example workflow](https://github.com/MarineB210/ClockSystem/actions/workflows/gradle.yml/badge.svg)

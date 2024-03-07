@@ -1,0 +1,16 @@
+name: ActionLint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rhysd actionlint
+        uses: devops-actions/actionlint@v0.1.2
+        continue-on-error: true
+        id: action-lint

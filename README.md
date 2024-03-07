@@ -1,4 +1,5 @@
 ![Build Status](https://github.com/Faltmatix/ClockSystem/actions/workflows/gradle.yml/badge.svg)
+[![PMD Analysis](https://github.com/Faltmatix/ClockSystem/actions/workflows/codeql.yml/badge.svg)](https://github.com/Faltmatix/ClockSystem/actions/workflows/codeql.yml)
 
 # ClockSystem
 

@@ -69,7 +69,7 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
-        languages: "java"
+        languages: ${{ matrix.language }}
         queries: security-experimental,security-extended,security-and-quality   
     # Autobuild attempts to build any compiled languages (C/C++, C#, Go, Java, or Swift).
     # If this step fails, then you should remove it and run the build manually (see below)
@@ -88,6 +88,6 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
-        category: "/language:java"
+        category: ${{ matrix.language }}
         
     

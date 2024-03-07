@@ -1,6 +1,6 @@
 # ClockSystem
 
-<img href="https://github.com/VionFrancois/ClockSystem/actions/workflows/WF-FILE.yml/badge.svg"/>
+![Build badge](https://github.com/VionFrancois/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 
 This is a gradle-based Java project for a Clock with Swing GUI and JUnit5 unit tests. It has been created and used by Tom Mens for educational purposes at the University of Mons.
 

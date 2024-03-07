@@ -33,7 +33,7 @@ jobs:
           languages: java
 
       - name: Build project
-        run: ./gradlew build
+        run: build gradle
 
       - name: Run CodeQL analysis
         uses: github/codeql-action/analyze@v1

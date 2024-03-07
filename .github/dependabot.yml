@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"  # Assuming your build.gradle.kts is in the root directory
+    schedule:
+      interval: "daily"  # You can adjust the interval as needed
+    open-pull-requests-limit: 10  # Limit the number of open pull requests
+
+# Optionally, you can specify additional update configurations if needed.

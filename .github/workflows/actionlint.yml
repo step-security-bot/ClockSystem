@@ -10,8 +10,13 @@ jobs:
   actionlint:
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+
       - name: Rhysd actionlint
-        uses: devops-actions/actionlint@v0.1.2
+        uses: devops-actions/actionlint@48ca80d7da4ffd5ed31b7981702bc6bb4b242c63 # v0.1.2
         continue-on-error: true
         id: action-lint
         

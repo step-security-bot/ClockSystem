@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/OWNER/REPO/actions/workflows/GRADLE-WORKFLOW-FILE.yml/badge.svg)](https://github.com/Faltmatix/ClockSystem/actions/workflows/gradle.yml)
+![Build Status](https://github.com/Faltmatix/ClockSystem/actions/workflows/gradle/badge.svg)
 
 # ClockSystem
 

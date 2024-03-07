@@ -18,3 +18,4 @@ The application has been tested locally with Java 21 and Gradle 8.5 (on MacOS). 
 
 ![example workflow](https://github.com/MarineB210/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 ![pmd](https://github.com/MarineB210/ClockSystem/actions/workflows/pmd.yml/badge.svg)
+![CodeQL](https://github.com/MarineB210/ClockSystem/actions/workflows/codeql.yml/badge.svg)

@@ -1,6 +1,7 @@
 ![Build Status](https://github.com/DanLoris/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 [![PMD Analysis](https://github.com/DanLoris/ClockSystem/actions/workflows/pmdanalysis.yml/badge.svg)](https://github.com/DanLoris/ClockSystem/actions/workflows/pmdanalysis.yml)
 [![CodeQL Security Analysis](https://github.com/DanLoris/ClockSystem/actions/workflows/codeql.yml/badge.svg)](https://github.com/DanLoris//ClockSystem/actions/workflows/pmdanalysis.yml)
+[![OpenSSF Scorecard](https://img.shields.io/badge/OpenSSF%20Scorecard-%3Ccomputed_score%3E-brightgreen)](https://github.com/DanLoris/ClockSystem/actions/workflows/scorecard.yml/badge.svg)
 
 
 # ClockSystem

@@ -1,6 +1,8 @@
 ![Gradle Build](https://github.com/RomeoXXIV/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 ![PMD Code Analysis](https://github.com/RomeoXXIV/ClockSystem/actions/workflows/pmd-analysis.yml/badge.svg)
 ![CodeQL](https://github.com/RomeoXXIV/ClockSystem/actions/workflows/codeql.yml/badge.svg)
+![Scorecard](https://github.com/RomeoXXIV/ClockSystem/actions/workflows/scorecard.yml/badge.svg)
+
 
 
 # ClockSystem

@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: "Run action lint"
-        uses: devops-actions/actionlint@v1.6.27
+        uses: devops-actions/actionlint@v0.1.2
         continue-on-error: true
         id: action-lint
 

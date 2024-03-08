@@ -1,8 +1,7 @@
 ![GitHub Workflow](https://github.com/JordanDemaret/ClockSystem/actions/workflows/gradle.yml/badge.svg)
 ![PMD Workflow](https://github.com/JordanDemaret/ClockSystem/actions/workflows/pmd.yml/badge.svg)
 ![CodeQL  Workflow](https://github.com/JordanDemaret/ClockSystem/actions/workflows/codeql.yml/badge.svg)
-
-
+![OpenSSF Scorecard  Workflow](https://github.com/JordanDemaret/ClockSystem/actions/workflows/scorecard.yml/badge.svg)
 
 
 # ClockSystem

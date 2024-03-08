@@ -29,7 +29,7 @@ public class ClockPanel extends JPanel {
 			
 			super.paintComponent(g2);
 			
-			ImageIcon image = new ImageIcon(getClass().getResource("/pictures/cadran.png"));
+			ImageIcon image = new ImageIcon(ClockPanel.class.getResource("/pictures/cadran.png"));
 			g2.drawImage(image.getImage(), -getWidth()/2, -getHeight()/2, null);
 			
 			double secondeAngle = (Math.PI/2) - (Math.PI*context.getObservedTime().getSecond()/30);
